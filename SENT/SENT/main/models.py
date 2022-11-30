@@ -17,6 +17,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='post/', default='default.png')
     likes = models.ManyToManyField(User, related_name='like_posts', blank=True)
     published_date = models.DateTimeField(default=timezone.now)
+    color = models.CharField(max_length=128, default='red')
 
 
 class Comment(models.Model):
