@@ -13,10 +13,11 @@ class Post(models.Model):
                                 blank=True)
     title = models.CharField(max_length=128)
     category = models.CharField(max_length=128)
-    body = models.TextField()
+    # body = models.TextField()
     image = models.ImageField(upload_to='post/', default='default.png')
     likes = models.ManyToManyField(User, related_name='like_posts', blank=True)
     published_date = models.DateTimeField(default=timezone.now)
+    color = models.CharField(max_length=128, default='red')
 
 
 class Comment(models.Model):
